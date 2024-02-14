@@ -1,11 +1,54 @@
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Header from './components/Header';
+import JobList from './components/JobList';
+// import JobDetails from './components/JobDetails';
+// import ApplyForm from './components/ApplyForm';
+import Home from './components/Home';
+import ShortList from './components/ShortList';
 
 function App() {
+  const [jobs, setJobs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const fetchJobs = () => {
+    fetch('http://localhost:3000/results')
+    .then(res => res.json())
+    .then(data => {
+      setJobs(data)
+      console.log(data)
+    })
+  };
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // const filteredJobs = jobs.filter((job) => {
+  //   return (
+  //     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     job.location.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  // });
+
   return (
-    <div className="App">
-      <p>Hey guys!</p>
-    </div>
-  );
+    <Router>
+      <div className="App">
+        {/* <Header handleSearchChange={handleSearchChange}/> */}
+        <Routes>
+          <Route exact path="/" element={<Home handleSearchChange={handleSearchChange}/>}/>
+          <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
+          <Route path="/shortlist" element={<ShortList jobs={jobs} />}/>  
+          {/* <Route path="/apply" element={<ApplyForm />}/>   */}
+        </Routes>
+      </div>
+    </Router>
+   );
 }
 
 export default App;
