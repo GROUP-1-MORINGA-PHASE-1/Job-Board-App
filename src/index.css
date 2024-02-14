@@ -10,6 +10,7 @@ body {
   color: #010101;
 }
 
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -82,3 +83,6 @@ body::-webkit-scrollbar {
   color: ivory;
   border: 1px solid #f2542d;
 }
+
+
+
