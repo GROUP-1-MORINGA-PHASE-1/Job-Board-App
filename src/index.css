@@ -83,30 +83,7 @@ body::-webkit-scrollbar {
   color: ivory;
   border: 1px solid #f2542d;
 }
-.login {
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-h2 {
-  text-align: center;
-}
-.login button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
-}
 
-.login button:hover {
-  background-color: #45a049;
-}
 
 
 

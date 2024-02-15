@@ -6,7 +6,7 @@ import JobList from './components/JobList';
 // import ApplyForm from './components/ApplyForm';
 import Home from './components/Home';
 import ShortList from './components/ShortList';
-import Login from './components/Login'; 
+import Login from './components/Login';  
 import SignUp from './components/SignUp';
 
 function App() {
