@@ -10,6 +10,7 @@ body {
   color: #010101;
 }
 
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -104,6 +105,7 @@ body::-webkit-scrollbar {
   border: 1px solid #f2542d;
 }
 
+
 /* .shortlist-container {
   width: 80%;
   margin: 2rem auto;
@@ -127,3 +129,6 @@ body::-webkit-scrollbar {
 .shortlist-card .job-btns button {
   margin-right: 2.5rem;
 } */
+
+
+
