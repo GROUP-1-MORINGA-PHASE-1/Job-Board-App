@@ -6,6 +6,8 @@ import JobList from './components/JobList';
 // import ApplyForm from './components/ApplyForm';
 import Home from './components/Home';
 import ShortList from './components/ShortList';
+import Login from './components/Login'; 
+import SignUp from './components/SignUp';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -45,6 +47,8 @@ function App() {
           <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
           <Route path="/shortlist" element={<ShortList jobs={jobs} />}/>  
           {/* <Route path="/apply" element={<ApplyForm />}/>   */}
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
     </Router>
