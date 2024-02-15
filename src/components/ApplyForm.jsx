@@ -31,8 +31,8 @@ const ApplyForm = () => {
       formDataObject.append(key, formData[key]);
     }
 
-    fetch('/http://localhost:3000/applied', {
-      method: 'POST',
+    fetch('http://localhost:3000/applied', { // Corrected the URL
+    method: 'POST',
       body: formDataObject,
     })
       .then((response) => {
