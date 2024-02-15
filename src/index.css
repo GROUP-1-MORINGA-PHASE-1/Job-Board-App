@@ -51,8 +51,28 @@ body::-webkit-scrollbar {
   /* border: 1px dotted red; */
   padding: 1rem 4rem;
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
-  gap: 0.25rem;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 0.5rem;
+}
+
+.details-container {
+  /* border: 1px dotted purple; */
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(1, 1, 1, 0.2);
+  padding: 1rem 4rem;
+  width: 1000px;
+}
+
+.details-container .job-btns {
+  margin: 0 auto ;
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container .job-btns button {
+  margin-right: 2rem;
 }
 
 .job-card {
@@ -65,7 +85,8 @@ body::-webkit-scrollbar {
 .job-btns {
   /* border: 1px dotted red; */
   margin: 10px auto;
-  width: 15%;
+  /* position: relative; */
+  /* width: 15%; */
 }
 
 .job-btns button {
@@ -83,6 +104,32 @@ body::-webkit-scrollbar {
   color: ivory;
   border: 1px solid #f2542d;
 }
+
+
+/* .shortlist-container {
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 1px rgba(1, 1, 1, 0.2);
+  padding: 1rem 4rem;
+}
+
+.shortlist-card {
+  border-bottom: 1px solid #010101;
+  margin: 2rem;
+  padding-bottom: 1rem;
+}
+
+.shortlist-card .job-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortlist-card .job-btns button {
+  margin-right: 2.5rem;
+} */
+
 
 
 
