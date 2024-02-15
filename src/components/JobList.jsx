@@ -37,9 +37,7 @@ const JobList = ({ jobs }) => {
       .then((data) => {
         setShortlistedJobs([...shortlistedJobs, data]);
       })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+
   };
 
   return (
