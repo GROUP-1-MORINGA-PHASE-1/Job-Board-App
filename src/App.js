@@ -14,7 +14,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const fetchJobs = () => {
-    fetch('http://localhost:3000/results')
+    fetch('http://localhost:3000/results') 
     .then(res => res.json())
     .then(data => {
       setJobs(data)
