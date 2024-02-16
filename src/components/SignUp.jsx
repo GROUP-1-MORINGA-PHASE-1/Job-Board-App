@@ -5,16 +5,15 @@ const SignUp = ({onSignUpSuccess}) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log('Signing up with:', { email, password });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Signing up with:', { email, password });
+  // };
 
   return (
     <div className='signup'>
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={onSignUpSuccess}>
         <label>Email:
           <input
             type="email"

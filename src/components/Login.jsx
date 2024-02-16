@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+    history('/job-list')   
     console.log('Logging in with:', { email, password });
   };
 
