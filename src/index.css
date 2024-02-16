@@ -209,3 +209,10 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.home-txt {
+  /* border: 1px solid red; */
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
