@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ handleSearchChange, searchTerm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(searchTerm);
+    handleSearchChange(searchTerm);
   };
 
   return (
@@ -14,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         placeholder="Search jobs"
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={(e) => handleSearchChange(e.target.value)}
       />
       <button type="submit">Search</button>
     </form>

@@ -2,10 +2,24 @@ import React, { useState } from 'react';
 import JobItem from './JobItem';
 import Header from './Header';
 import JobDetails from './JobDetails';
+import SearchBar from './SearchBar'
 
 const JobList = ({ jobs }) => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [shortlistedJobs, setShortlistedJobs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // const filteredJobs = jobs.filter((job) => {
+  //   return (
+  //     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     job.location.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  // });
 
   const addToShortlist = (job) => {
     fetch('http://localhost:3000/shortlist', {
@@ -25,6 +39,7 @@ const JobList = ({ jobs }) => {
   return (
     <>
       <Header />
+      <SearchBar handleSearchChange={handleSearchChange} searchTerm={searchTerm}/>
       <div className='job-container'>
         {selectedJob ? (
           <JobDetails 

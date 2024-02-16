@@ -6,7 +6,6 @@ import ShortList from './components/ShortList';
 
 function App() {
   const [jobs, setJobs] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchJobs = () => {
     fetch('http://localhost:3000/results') 
@@ -21,18 +20,7 @@ function App() {
     fetchJobs();
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  // const filteredJobs = jobs.filter((job) => {
-  //   return (
-  //     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //     job.location.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-  // });
-
+ 
   const handleApply = (jobId) => {
     // Handle apply functionality here
     console.log(`Applying for job with ID: ${jobId}`);
@@ -47,7 +35,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<Home handleSearchChange={handleSearchChange}/>}/>
+          <Route exact path="/" element={<Home />}/>
           <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
           <Route path="/shortlist" element={<ShortList shortlistedJobs={jobs} onApply={handleApply} onRemove={handleRemove} />}/>  
         </Routes>
