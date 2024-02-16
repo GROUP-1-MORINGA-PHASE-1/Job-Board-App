@@ -1,25 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import JobItem from './JobItem';
 import Header from './Header';
 import JobDetails from './JobDetails';
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar';
 
 const JobList = ({ jobs }) => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [shortlistedJobs, setShortlistedJobs] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('title');
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  useEffect(() => {
+    // Filter jobs based on search term and selected category
+    const filtered = jobs.filter((job) => {
+      const categoryValue = job[selectedCategory]?.toLowerCase(); // Get category value (title, location, type)
+      return categoryValue && categoryValue.includes(searchTerm.toLowerCase());
+    });
+  
+    setFilteredJobs(filtered);
+  }, [searchTerm, jobs, selectedCategory]);
+
+  const handleSearchChange = (value) => {
+    setSearchTerm(value);
   };
 
-  // const filteredJobs = jobs.filter((job) => {
-  //   return (
-  //     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //     job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  //     job.location.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-  // });
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
 
   const addToShortlist = (job) => {
     fetch('http://localhost:3000/shortlist', {
@@ -32,28 +40,31 @@ const JobList = ({ jobs }) => {
       .then((response) => response.json())
       .then((data) => {
         setShortlistedJobs([...shortlistedJobs, data]);
-      })
-
+      });
   };
 
   return (
     <>
       <Header />
-      <SearchBar handleSearchChange={handleSearchChange} searchTerm={searchTerm}/>
+      <SearchBar
+        handleSearchChange={handleSearchChange}
+        searchTerm={searchTerm}
+        handleCategoryChange={handleCategoryChange}
+      />
       <div className='job-container'>
         {selectedJob ? (
-          <JobDetails 
-            job={selectedJob} 
-            setSelectedJob={setSelectedJob} 
+          <JobDetails
+            job={selectedJob}
+            setSelectedJob={setSelectedJob}
             addToShortlist={addToShortlist}
           />
         ) : (
-          jobs.map((job) => (
+          filteredJobs.map((job) => (
             <JobItem
               key={job.id}
               job={job}
               selectedJob={selectedJob}
-              setSelectedJob={setSelectedJob}              
+              setSelectedJob={setSelectedJob}
             />
           ))
         )}
