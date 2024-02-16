@@ -38,30 +38,3 @@ function Home({handleSearchChange}) {
 }
 
 export default Home
-// import React, { useState } from 'react'
-// import Header from './Header'
-// import Auth from './Auth'
-
-// function Home({ handleSearchChange }) {
-//   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
-//   const handleLoginSuccess = () => {
-//     setIsLoggedIn(true)
-//   }
-
-//   return (
-//     <>
-//       <Header handleSearchChange={handleSearchChange} />
-//       {!isLoggedIn ? (
-//         <Auth onLoginSuccess={handleLoginSuccess} />
-//       ) : (
-//         <>
-//           <h2>Welcome to the Job Board</h2>
-//           <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-//         </>
-//       )}
-//     </>
-//   )
-// }
-
-// export default Home
