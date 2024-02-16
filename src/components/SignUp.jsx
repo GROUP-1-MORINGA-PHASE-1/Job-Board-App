@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './LandingPage.css';
 
-const SignUp = () => {
+const SignUp = ({onSignUpSuccess}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -45,6 +44,10 @@ const SignUp = () => {
         <br />
         <button type="submit">Sign Up</button>
       </form>
+      <div className="signup-login">
+        <p>Have an account? </p>
+        <button id='login-btn'onClick={onSignUpSuccess}>Log in</button>
+      </div>
     </div>
   );
 }

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Header from './components/Header';
 import JobList from './components/JobList';
-// import JobDetails from './components/JobDetails';
-// import ApplyForm from './components/ApplyForm';
 import Home from './components/Home';
 import ShortList from './components/ShortList';
-import Login from './components/Login';  
-import SignUp from './components/SignUp';
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -51,14 +46,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Header handleSearchChange={handleSearchChange}/> */}
         <Routes>
           <Route exact path="/" element={<Home handleSearchChange={handleSearchChange}/>}/>
           <Route path="/job-list" element={<JobList jobs={jobs} />}/>  
           <Route path="/shortlist" element={<ShortList shortlistedJobs={jobs} onApply={handleApply} onRemove={handleRemove} />}/>  
-          {/* <Route path="/apply" element={<ApplyForm />}/>   */}
-          <Route path="/login" element={<Login />} /> 
-          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </div>
     </Router>

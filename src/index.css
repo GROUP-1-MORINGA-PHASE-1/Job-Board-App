@@ -131,5 +131,72 @@ body::-webkit-scrollbar {
 }
 
 
+.signup,
+.login {
+  max-width: 300px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.signup button,
+.login button {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #f2542d;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: .7s ease-in-out;
+}
+
+.signup button:hover,
+.login button:hover {
+  box-shadow: 1px 1px 10px 1px #f2542d !important;
+  color: #f2542d;
+  background-color: transparent;
+}
 
 
+.home {
+  display: flex;
+}
+
+.signup #login-btn {
+  background-color: transparent;
+  border: 1px solid #f2542d;
+  border-radius: 6px;
+  padding: 5px;
+  color: #f2542d;
+  width: 40%;
+  margin-left: 1rem;
+  transition: .7s ease-in-out;
+}
+
+.signup-login {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
