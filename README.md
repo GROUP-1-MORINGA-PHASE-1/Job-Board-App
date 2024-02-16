@@ -1,4 +1,30 @@
-# Getting Started with Create React App
+# JOB BOARD APP
+Our project focuses on creating a platform where users can search for and apply to various job opportunities. 
+Key features of the app include displaying job listings, allowing users to view detailed job descriptions, enabling job search functionality, and facilitating the job application process. The technologies employed in this project include React for building the frontend interface, React Router for client-side routing, and JSON Server for creating a mock RESTful API to serve job data.
+
+## Authors
+1. Phillip Wekullo
+2. Mitchelle Nasirisi
+3. Rotich Jane
+4. Morgan Njoroge
+
+
+### Set Up instructions
+1. clone the repository
+```bash
+git git@github.com:GROUP-1-MORINGA-PHASE-1/job-board-app.git
+```
+2. navigate to project repository
+```bash
+cd job-board-app 
+```
+3. open code editor preferably visual studio
+```bash
+code .
+```
+### Deliverables
+1. 
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -49,6 +75,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
+
+
+
 ### Analyzing the Bundle Size
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
@@ -67,4 +96,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
